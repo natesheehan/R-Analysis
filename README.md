@@ -1,3 +1,3 @@
-# Divest
+# R
 
-A selection of Divest related R projects.
+Numerous R projects and analysis.
