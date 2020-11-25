@@ -18,8 +18,9 @@ lwd = devon_lines_30$all / mean(devon_lines_30$all) * 5
 plot(devon_lines_30[c("bicycle", "car_driver", "foot")], lwd = lwd)
 
 devon_od_all = get_od(region = "devon")
-summary(devon_od_all$geo_code1 %in% devon_centroids$geo_code)
-summary(devon_od_all$geo_code2 %in% devon_centroids$geo_code)
+devon_centroids_msoa = pct::get_pct_centroids(region = "devon", geography = "msoa")
+summary(devon_od_all$geo_code1 %in% devon_centroids_msoa$geo_code)
+summary(devon_od_all$geo_code2 %in% devon_centroids_msoa$geo_code)
 
 devon_od = devon_od_all[
   devon_od_all$geo_code2 %in% devon_centroids$geo_code,]
